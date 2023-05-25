@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button ><a href="resultados.html">Pesquisar</a></button>
+    <h1>CADASTRO DE FILME</h1>
+    <div id="formCadastroFilme">
+        Id: <input type="text"  id="filmeId"><br>
+        Imagem: <input type="url"  id="filmeImg"><br>
+        Nome: <input type="text"  id="filmeName"><br>
+        Sinopse: <input type="text" id="filmeSinopse"><br>
+        Ano: <input type="text" id="filmeAno"><br>
+        Tempo: <input type="text" id="filmeTempo"><br>
+        Categoria: <input type="text" id="filmeCategoria"><br>
+        Tags: <input type="text" id="filmeTag"><br>
+        Direção: <input type="text" id="filmeDirecao"><br>
+        Elenco: <input type="text" id="filmeElenco"><br>
+        <button id="btnIncluirFilme">Salvar</button>
+        <button id="btnApagarFilme">Apagar Filme</button>
+        <button id="btnEditarFilme">Editar Filme</button>
+    </div>
+
+    <br>
+    <h1>LISTAR FILMES</h1>
+    <button  id="btnCarregaFilme">Listar</button>
+<div id="tela">
+
+</div>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('btnCarregaFilme').addEventListener('click', imprimirDados);
+document.getElementById('btnIncluirFilme').addEventListener('click', incluirFilme);
+
+let btnApagarFilme = document.getElementById("btnApagarFilme");
+btnApagarFilme.addEventListener("click", apagarFilmePorId);
+
+document.getElementById('btnEditarFilme').addEventListener('click', editarFilme);
+
+
+
+</script>
+</body>
+</html>
