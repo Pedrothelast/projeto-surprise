@@ -108,7 +108,7 @@ function imprimirDados() {
     let objDados = lerDados();
 
     for (i = 0; i < objDados.filmes.length; i++) {
-        strHtml += `
+        strHtml += `<div class="filmes" style="background-color:orange; padding:20px;>
     <img class="capa" src="${objDados.filmes[i].img}">
     <p>${objDados.filmes[i].id}<br>
     ${objDados.filmes[i].name}<br>
@@ -120,7 +120,7 @@ function imprimirDados() {
     ${objDados.filmes[i].direcao}<br>
     ${objDados.filmes[i].elenco}<br>
     ${objDados.filmes[i].visualizacao}
-    </p>`
+    </p></div>`;
     }
 
     tela.innerHTML = strHtml;
@@ -171,18 +171,23 @@ function exibirResultados(filmes) {
     let objDados = lerDados();
 
     filmes.forEach(filme => {
-        strHtml += `
+        strHtml += `<div class="filmes">
+        <div class="title-img">
+        <h2 style="text-transform: uppercase; width:100%"><strong>${filme.name}</strong></h2><br>
         <img class="capa" src="${filme.img}">
+        </div>
+        <div class=" info-filmes">
         <p>
-          Nome: ${filme.name}<br>
-          Sinopse: ${filme.sinopse}<br>
-          Ano: ${filme.ano}<br>
-          Tempo: ${filme.tempo}<br>
-          Categoria: ${filme.categoria}<br>
-          Tags: ${filme.tags.join(", ")}<br>
-          Direção: ${filme.direcao}<br>
-          Elenco: ${filme.elenco}
-        </p>`;
+          <strong>Sinopse:</strong> ${filme.sinopse}<br>
+          <strong>Ano:</strong> ${filme.ano}<br>
+          <strong>Tempo:</strong> ${filme.tempo}<br>
+          <strong>Categoria:</strong> ${filme.categoria}<br>
+          <strong>Tags:</strong> ${filme.tags.join(", ")}<br>
+          <strong>Direção:</strong> ${filme.direcao}<br>
+          <strong>Elenco:</strong> ${filme.elenco}
+          </p>
+          </div>
+          </div>`;
         for (i = 0; i < objDados.filmes.length; i++) {
             if (filme.name == objDados.filmes[i].name) {
                 objDados.filmes[i].visualizacao++;

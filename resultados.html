@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="style.css" class="style">
 </head>
 <body>
-    <button ><a href="index.html">Voltar</a></button>
-    <div id="formBuscaFilmes">
-        Tags de busca: <input type="text" id="inputDados">
+    <button id="back-v"><a href="index.html">Voltar</a></button>
+    <div class="barra-pesquisa">
+        <div id="formBuscaFilmes">
+        <p>TAGS DE BUSCA:</p> <input type="text" id="inputDados" style="height: 30px; width: 250px;">
         <button id="addTag" >Adicionar tag</button>
+    </div>
+    
         <div id="tagsM" style="margin: 20px;">
 
         </div>
     </div>
-    <div id="telas">
+    <div class="resultados-filmes" id="telas">
     
     </div>
     <div id="telas2">
     
     </div>
-    <div>
+    <div class="botao-pesquisa">
 
         <button id="btnBuscarFilmes" >Buscar</button>
     </div>
