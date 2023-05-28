@@ -108,22 +108,47 @@ function imprimirDados() {
     let objDados = lerDados();
 
     for (i = 0; i < objDados.filmes.length; i++) {
-        strHtml += `<div class="filmes" style="background-color:orange; padding:20px;>
-    <img class="capa" src="${objDados.filmes[i].img}">
-    <p>${objDados.filmes[i].id}<br>
-    ${objDados.filmes[i].name}<br>
-    ${objDados.filmes[i].sinopse}<br>
-    ${objDados.filmes[i].ano}<br>
-    ${objDados.filmes[i].tempo}<br>
-    ${objDados.filmes[i].categoria}<br>
-    ${objDados.filmes[i].tags}<br>
-    ${objDados.filmes[i].direcao}<br>
-    ${objDados.filmes[i].elenco}<br>
-    ${objDados.filmes[i].visualizacao}
-    </p></div>`;
-    }
+        strHtml += `<div class="filmes">
+        <div class="title-img">
+        <h2 style="text-transform: uppercase; width:208px"><strong>${objDados.filmes[i].name}</strong></h2><br>
+        <img class="capa" src="${objDados.filmes[i].img}">
+        </div>
+        <div class=" info-filmes">
+        <p>
+          <strong>Sinopse:</strong> ${objDados.filmes[i].sinopse}<br>
+          <strong>Ano:</strong> ${objDados.filmes[i].ano}<br>
+          <strong>Tempo:</strong> ${objDados.filmes[i].tempo}<br>
+          <strong>Categoria:</strong> ${objDados.filmes[i].categoria}<br>
+          <strong>Tags:</strong> ${objDados.filmes[i].tags.join(", ")}<br>
+          <strong>Direção:</strong> ${objDados.filmes[i].direcao}<br>
+          <strong>Elenco:</strong> ${objDados.filmes[i].elenco}
+          </p>
+          </div>
+          </div>`;
+    }objDados.filmes[i]
 
     tela.innerHTML = strHtml;
+
+     // Attach click event listeners to movie elements
+  let filmes = document.getElementsByClassName('filmes');
+  for (let j = 0; j < filmes.length; j++) {
+    filmes[j].addEventListener('click', function() {
+      let selectedFilme = objDados.filmes[j];
+
+      // Populate form inputs with selected movie details
+      document.getElementById('filmeId').value = selectedFilme.id;
+      document.getElementById('filmeImg').value = selectedFilme.img;
+      document.getElementById('filmeName').value = selectedFilme.name;
+      document.getElementById('filmeSinopse').value = selectedFilme.sinopse;
+      document.getElementById('filmeAno').value = selectedFilme.ano;
+      document.getElementById('filmeTempo').value = selectedFilme.tempo;
+      document.getElementById('filmeCategoria').value = selectedFilme.categoria;
+      document.getElementById('filmeTag').value = selectedFilme.tags.join(', ');
+      document.getElementById('filmeDirecao').value = selectedFilme.direcao;
+      document.getElementById('filmeElenco').value = selectedFilme.elenco;
+    });
+  }
+
 }
 
 //pesquisa dos filmes
@@ -173,7 +198,7 @@ function exibirResultados(filmes) {
     filmes.forEach(filme => {
         strHtml += `<div class="filmes">
         <div class="title-img">
-        <h2 style="text-transform: uppercase; width:100%"><strong>${filme.name}</strong></h2><br>
+        <h2 style="text-transform: uppercase; width:208px"><strong>${filme.name}</strong></h2><br>
         <img class="capa" src="${filme.img}">
         </div>
         <div class=" info-filmes">
