@@ -13,8 +13,7 @@
         <div id="formBuscaFilmes">
         <p>TAGS DE BUSCA:</p> <input type="text" id="inputDados" style="height: 30px; width: 250px;">
         <button id="addTag" >Adicionar tag</button>
-    </div>
-    
+        <button id="limparTags">Limpar Tags</button>
         <div id="tagsM" style="margin: 20px;">
 
         </div>
@@ -43,12 +42,60 @@
         });
     
         document.getElementById('btnBuscarFilmes').addEventListener('click', function() {
-            let tags = dados.join(', ');
-            let filmesEncontrados = buscarFilmesPorTags(tags);
+            var tags = dados.join(', ');
+            var filmesEncontrados = buscarFilmesPorTags(tags);
             exibirResultados(filmesEncontrados);
            // let filmes2 = buscarFilmesPorVisualizacoes();
            // exibirResultadosV(filmes2);
         });
     </script>
+   <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var inputTags = document.getElementById('inputDados');
+    var buttonAdicionar = document.getElementById('addTag');
+    var buttonLimpar = document.getElementById('limparTags');
+    var tagsContainer = document.getElementById('tagsM');
+    var tags = [];
+
+    buttonAdicionar.addEventListener('click', function() {
+      var tag = inputTags.value.trim();
+      if (tag !== '') {
+        tags.push(tag);
+        renderTags();
+        inputTags.value = '';
+      }
+    });
+
+    buttonLimpar.addEventListener('click', function() {
+      tags = [];
+      renderTags();
+    });
+
+    tagsContainer.addEventListener('click', function(event) {
+      if (event.target.classList.contains('tag')) {
+        var tag = event.target.dataset.tag;
+        tags = tags.filter(function(item) {
+          return item !== tag;
+        });
+        renderTags();
+      }
+    });
+
+    function renderTags() {
+      tagsContainer.innerHTML = '';
+
+      tags.forEach(function(tag) {
+        var tagElement = document.createElement('span');
+        tagElement.classList.add('tag');
+        tagElement.textContent = tag;
+        tagElement.dataset.tag = tag; // Armazena a tag como um atributo de dados
+        tagsContainer.appendChild(tagElement);
+      });
+    }
+
+    // Renderiza as tags iniciais ao carregar a página
+    
+  });
+  </script>
 </body>
 </html>
