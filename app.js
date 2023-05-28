@@ -168,8 +168,13 @@ function buscarFilmesPorTags(tags) {
     }
 
     return [];
-}
 
+    
+}
+// Adicionar evento de clique ao botão "Limpar Tags"
+document.getElementById('limparTags').addEventListener('click', function() {
+  document.getElementById('tagsBusca').value = '';
+});
 
 
 /*function buscarFilmesPorTags(tags) {
