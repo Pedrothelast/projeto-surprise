@@ -1,7 +1,63 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
+.index-page{
+    background-color: black;
+}
+.index-page h1{
+        text-align: center;
+        font-family: arial;
+        color: white;
+}
+.index-page .pesquisar{
+    margin: 10px;
+    background-color: rgb(231, 105, 2);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.index-page .pesquisar a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+#formCadastroFilme{
+    display: flex;
+    flex-direction: column;
+}
+
+#formCadastroFilme input{
+    margin: 8px;
+    padding: 7px;
+    width: 200px;
+    vertical-align: middle;
+    border: none;
+    border-radius: 5px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group label {
+    margin-right: 10px;
+    flex-basis: 70px;
+    color: white;
+    background-color: rgb(231, 105, 2);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.botao-cadastro{
+    display: flex;
+    width: 100px;
+    justify-content: center;
+}
+/*----------------------------------------------------------------*/
 .resultado{
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
