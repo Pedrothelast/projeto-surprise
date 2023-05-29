@@ -11,54 +11,64 @@
     <button class="pesquisar"><a href="resultados.html">Pesquisar</a></button>
     <h1>CADASTRO DE FILME</h1>
     <div id="formCadastroFilme">
-        <div class="input-group">
-        <label>Id:</label>
-        <input type="text"  id="filmeId">
-    </div>    
-        <div class="input-group">
-        <label>Imagem:</label>
-        <input type="url"  id="filmeImg">
+        <div class="column">
+          <div class="input-group">
+            <label>Id:</label>
+            <input type="text" id="filmeId">
+          </div>
+          <div class="input-group">
+            <label>Imagem:</label>
+            <input type="url" id="filmeImg">
+          </div>
+          <div class="input-group">
+            <label>Nome:</label>
+            <input type="text" id="filmeName">
+          </div>
+          <div class="input-group">
+            <label>Sinopse:</label>
+            <input type="text" id="filmeSinopse">
+          </div>
         </div>
-        <div class="input-group">
-        <label>Nome:</label>
-        <input type="text"  id="filmeName">
+        <div class="column">
+          <div class="input-group">
+            <label>Ano:</label>
+            <input type="text" id="filmeAno">
+          </div>
+          <div class="input-group">
+            <label>Tempo:</label>
+            <input type="text" id="filmeTempo">
+          </div>
+          <div class="input-group">
+            <label>Categoria:</label>
+            <input type="text" id="filmeCategoria">
+          </div>
+          <div class="input-group">
+            <label>Tags:</label>
+            <input type="text" id="filmeTag">
+          </div>
         </div>
-        <div class="input-group">
-        <label>Sinopse:</label>
-        <input type="text" id="filmeSinopse">
+        <div class="column">
+          <div class="input-group">
+            <label>Direção:</label>
+            <input type="text" id="filmeDirecao">
+          </div>
+          <div class="input-group">
+            <label>Elenco:</label>
+            <input type="text" id="filmeElenco">
+          </div>
         </div>
-        <div class="input-group">
-        <label>Ano:</label>
-        <input type="text" id="filmeAno">
+        <div class="button-group">
+          <button class="botao-cadastro" id="btnIncluirFilme">Salvar</button>
+          <button class="botao-cadastro" id="btnApagarFilme">Apagar Filme</button>
+          <button class="botao-cadastro" id="btnEditarFilme">Editar Filme</button>
         </div>
-        <div class="input-group">
-        <label>Tempo:</label>
-        <input type="text" id="filmeTempo">
-        </div>
-        <div class="input-group">
-        <label>Categoria:</label>
-        <input type="text" id="filmeCategoria">
-        </div>
-        <div class="input-group">
-        <label>Tags:</label>
-        <input type="text" id="filmeTag">
-        </div>
-        <div class="input-group">
-        <label>Direção:</label>
-        <input type="text" id="filmeDirecao">
-        </div>
-        <div class="input-group">
-        <label>Elenco:</label>
-        <input type="text" id="filmeElenco">
-        </div>
-        <button class="botao-cadastro" id="btnIncluirFilme">Salvar</button>
-        <button class="botao-cadastro" id="btnApagarFilme">Apagar Filme</button>
-        <button class="botao-cadastro" id="btnEditarFilme">Editar Filme</button>
-    </div>
-
+      </div>
+      
+<div class="listar">
     <br>
     <h1>LISTAR FILMES</h1>
     <button  id="btnCarregaFilme">Listar</button>
+</div>
 <div id="tela">
 
 </div>
